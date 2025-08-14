@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperXS Speedtest</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #111, #000);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 2px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        iframe {
+            flex: 1;
+            border: none;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        footer {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 HyperXS Speedtest</h1>
+    </header>
+
+    <iframe src="https://hyperxs.speedtestcustom.com" width="100%" height="650px"></iframe>
+
+    <footer>
+        © 2025 HyperXS - Teste de Velocidade
+    </footer>
+</body>
+</html>
