@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HyperXS Speedtest</title>
     <style>
+        /* Fundo degradê */
         body {
             margin: 0;
             padding: 0;
@@ -15,11 +16,12 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         header {
             padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0,0,0,0.6);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
@@ -28,18 +30,24 @@
             font-size: 2.2rem;
             margin: 0;
             letter-spacing: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             animation: fadeIn 1s ease-in-out;
         }
 
         iframe {
             flex: 1;
+            display: block;
+            margin: 40px auto;
+            border-radius: 15px;
             border: none;
             animation: fadeIn 1.2s ease-in-out;
         }
 
         footer {
             padding: 15px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0,0,0,0.6);
             font-size: 0.9rem;
             letter-spacing: 1px;
         }
@@ -47,6 +55,26 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cobrinha animada */
+        .border-snake {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border-radius: 25px;
+            pointer-events: none;
+            box-sizing: border-box;
+        }
+
+        .snake-line {
+            position: absolute;
+            width: 80px;
+            height: 8px;
+            background: lime;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -60,5 +88,51 @@
     <footer>
         © 2025 HyperXS - Teste de Velocidade
     </footer>
+
+    <div class="border-snake">
+        <div class="snake-line" id="snake"></div>
+    </div>
+
+    <script>
+        const snake = document.getElementById('snake');
+        const border = document.querySelector('.border-snake');
+        let speed = 2; // pixels por frame
+        let width = border.clientWidth - snake.offsetWidth;
+        let height = border.clientHeight - snake.offsetHeight;
+        let pos = {x: 0, y: 0};
+        let direction = 'right';
+
+        function moveSnake() {
+            switch(direction) {
+                case 'right':
+                    pos.x += speed;
+                    if(pos.x >= width) { pos.x = width; direction = 'down'; }
+                    break;
+                case 'down':
+                    pos.y += speed;
+                    if(pos.y >= height) { pos.y = height; direction = 'left'; }
+                    break;
+                case 'left':
+                    pos.x -= speed;
+                    if(pos.x <= 0) { pos.x = 0; direction = 'up'; }
+                    break;
+                case 'up':
+                    pos.y -= speed;
+                    if(pos.y <= 0) { pos.y = 0; direction = 'right'; }
+                    break;
+            }
+            snake.style.left = pos.x + 'px';
+            snake.style.top = pos.y + 'px';
+            requestAnimationFrame(moveSnake);
+        }
+
+        // Aumenta a velocidade gradualmente
+        setInterval(() => {
+            speed += 0.1; // aumenta a velocidade
+            if(speed > 10) speed = 10; // limite máximo
+        }, 3000);
+
+        moveSnake();
+    </script>
 </body>
 </html>
