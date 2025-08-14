@@ -70,7 +70,7 @@ footer {
 
 .snake-line {
     position: absolute;
-    width: 80px;      /* maior comprimento */
+    width: 800px;      /* maior comprimento */
     height: 8px;      /* mesma altura */
     background: lime;
     border-radius: 4px;
