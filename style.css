@@ -1,30 +1,62 @@
 /* style.css */
 
+/* Fundo degradê do seu HTML original */
 body {
     margin: 0;
-    background: #000;
-    color: #fff;
-    font-family: sans-serif;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #111, #000);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 
+/* Cabeçalho */
+header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
 h1 {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Iframe centralizado */
 iframe {
+    flex: 1;
     display: block;
     margin: 40px auto;
     border-radius: 15px;
     border: none;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Borda animada */
+/* Rodapé */
+footer {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Animação fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Borda animada tipo "cobrinha" */
 .border-snake {
     position: fixed;
     top: 10px;
