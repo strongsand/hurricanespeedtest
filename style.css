@@ -1,0 +1,61 @@
+/* style.css */
+
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    display: block;
+    margin: 40px auto;
+    border-radius: 15px;
+    border: none;
+}
+
+/* Borda animada */
+.border-snake {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 25px;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.snake-line {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: lime;
+    border-radius: 50%;
+    animation: move-snake 8s linear infinite, color-change 8s linear infinite;
+}
+
+/* Caminho da "cobrinha" */
+@keyframes move-snake {
+    0%   { top: 0; left: 0; }
+    25%  { top: 0; left: calc(100% - 8px); }
+    50%  { top: calc(100% - 8px); left: calc(100% - 8px); }
+    75%  { top: calc(100% - 8px); left: 0; }
+    100% { top: 0; left: 0; }
+}
+
+/* Mudança de cor */
+@keyframes color-change {
+    0%, 100% { background-color: lime; }
+    50%      { background-color: cyan; }
+}
