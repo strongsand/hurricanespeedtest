@@ -3,95 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hurricano SpeedTest</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hero-gradient {
-          background: linear-gradient(135deg, #2D2D2D 0%, #000000 100%);
-color: #FFFFFF;
-
-        }
-        .speedtest-container {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        footer {
-            background: linear-gradient(135deg, #2D2D2D 0%, #000000 100%);
-color: #FFFFFF;
-
-        }
-    </style>
+    <title>HyperXS Speed Test</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
-    <header class="hero-gradient text-white py-12">
-        <div class="container mx-auto px-4 text-center">
-            <img src="https://placehold.co/150x50" alt="Logo HyperXS SpeedTest" class="mx-auto mb-6" />
-            <h1 class="text-4xl font-bold mb-4">Hurricano Speed Test</h1>
-            <p class="text-xl opacity-90 max-w-2xl mx-auto"> Teste sua internet .</p>
-        </div>
-    </header>
+<body>
 
-    <main class="flex-grow container mx-auto px-4 py-12">
-        <div class="max-w-5xl mx-auto">
-            <div class="bg-white rounded-lg p-6 mb-8 text-center">
-                <h2 class="text-2xl font-semibold mb-4">Como usar:</h2>
-                <div class="grid md:grid-cols-3 gap-6 text-gray-700">
-                    <div class="p-4">
-                        <div class="bg-blue-100 text-blue-800 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 text-2xl">1</div>
-                        <p>Clique no botão "Iniciar Teste" no quadro abaixo</p>
-                    </div>
-                    <div class="p-4">
-                        <div class="bg-blue-100 text-blue-800 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 text-2xl">2</div>
-                        <p>Aguarde o teste completar todas as etapas</p>
-                    </div>
-                    <div class="p-4">
-                        <div class="bg-blue-100 text-blue-800 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 text-2xl">3</div>
-                        <p>Visualize seus resultados detalhados</p>
-                    </div>
-                </div>
-            </div>
+    <h1>Teste de Conexão HyperXS</h1>
 
-            <div class="speedtest-container">
-                <iframe width="100%" height="650px" frameborder="0" src="https://hyperxs.speedtestcustom.com" title="HyperXS SpeedTest" class="border-0"></iframe>
-            </div>
-        </div>
-    </main>
+    <div class="speedtest-container">
+        <iframe width="100%" height="650px" frameborder="0" src="https://hyperxs.speedtestcustom.com"></iframe>
+    </div>
 
-    <footer class="py-8 text-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <img src="https://placehold.co/120x40" alt="Logo HyperXS" class="h-10" />
-                </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="hover:text-blue-300 transition">Termos de Serviço</a>
-                    <a href="#" class="hover:text-blue-300 transition">Política de Privacidade</a>
-                    <a href="#" class="hover:text-blue-300 transition">Contato</a>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
-                <p>© 2025Hurricuny SpeedTest Custom. Todos os direitos reservados.</p>
-                <p class="mt-2">Hospedado no GitHub Pages</p>
-                <p >feito com desgosto ops quer dizer com amor kk</p>
-            </div>
-        </div>
+    <footer id="footer-info">
+        Carregando suas informações de rede...
     </footer>
 
-    <script>
-        // Ajustar altura do iframe em dispositivos móveis
-        function adjustIframeHeight() {
-            const iframe = document.querySelector('iframe');
-            if (window.innerWidth < 768) {
-                iframe.style.height = '500px';
-            } else {
-                iframe.style.height = '650px';
-            }
-        }
-
-        // Executar no carregamento e no redimensionamento
-        window.addEventListener('load', adjustIframeHeight);
-        window.addEventListener('resize', adjustIframeHeight);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
